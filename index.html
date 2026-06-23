@@ -3,6 +3,24 @@
 <head>
     <script src="https://henrykamsi.github.io/hgt-guardian/hgt-guardian.js"></script>
 <script>
+    window.addEventListener('DOMContentLoaded', function() {
+        // Initialize the Security Gate
+        if (typeof HGT_Guardian !== 'undefined') {
+            HGT_Guardian.init({
+                brand: 'Henry Global Tech Industry',
+                mode: 'full',
+                autoGuard: true,
+                onSuccess: function() {
+                    console.log("HGT Guardian: Identity verified. Access granted.");
+                    // The site content will now be accessible
+                }
+            });
+        }
+    });
+</script>
+
+    <script src="https://henrykamsi.github.io/hgt-guardian/hgt-guardian.js"></script>
+<script>
     // Initialize the engine
     HGT_Guardian.init({
         mode: 'full',           // Enables both Math Challenges and Biometrics
